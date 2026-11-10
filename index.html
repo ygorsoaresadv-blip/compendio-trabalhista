@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Compêndio trabalhista: busca de súmulas, OJs e precedentes do TST e do STF</title>
+    <meta name="description" content="Consulta gratuita e rápida à jurisprudência trabalhista: súmulas, OJs, precedentes normativos, IRRs e temas do STF, com situação, data de verificação e link para a fonte oficial." />
+    <meta name="theme-color" content="#0f3527" />
+    <link rel="canonical" href="https://ygorsoaresadv-blip.github.io/compendio-trabalhista/" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preload" href="./fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Compêndio trabalhista" />
+    <meta property="og:title" content="Compêndio trabalhista" />
+    <meta property="og:description" content="Súmulas, OJs, precedentes e temas do TST e do STF, com status e fonte oficial. Gratuito, sem cadastro." />
+    <meta property="og:url" content="https://ygorsoaresadv-blip.github.io/compendio-trabalhista/" />
+    <meta property="og:image" content="https://ygorsoaresadv-blip.github.io/compendio-trabalhista/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Compêndio trabalhista, com o símbolo § em dourado sobre fundo verde-noite" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="index,follow" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"Compêndio trabalhista","applicationCategory":"ReferenceApplication","inLanguage":"pt-BR","isAccessibleForFree":true,"author":{"@type":"Person","name":"Ygor Soares"}}
+    </script>
+    <script>
+      // aplica o tema antes da primeira pintura, para não piscar
+      try {
+        var p = new URLSearchParams(location.search).get("modo");
+        var t = p === "claro" ? "light" : p === "escuro" ? "dark" : localStorage.getItem("compendio:tema");
+        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="raiz"></div>
+    <noscript><p style="padding:24px;font-family:sans-serif">Este compêndio precisa de JavaScript para a busca funcionar. Os dados oficiais estão em jurisprudencia.tst.jus.br e portal.stf.jus.br.</p></noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
