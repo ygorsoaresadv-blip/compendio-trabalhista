@@ -1,0 +1,60 @@
+{
+  "_nota": "Registros acrescentados após a base de 22/09/2026. Só constam campos verificados em página oficial (STF); campo null significa que não foi localizado na fonte oficial.",
+  "registros": [
+    {
+      "id": "stf-adc-80",
+      "tribunal": "STF",
+      "tipo": "adc",
+      "classe": "ADC",
+      "numero": 80,
+      "numero_unico": "0117616-38.2022.1.00.0000",
+      "relator": "Min. Edson Fachin (vencido)",
+      "redator_acordao": "Min. Gilmar Mendes (consta na página do processo; confirmar quando o acórdão sair)",
+      "data_julgamento": "2026-09-03",
+      "data_publicacao_acordao": null,
+      "partes_publicas": "Confederação Nacional do Sistema Financeiro (Consif) x Presidente da República e Mesas Diretoras do Senado Federal e da Câmara dos Deputados",
+      "tema": "Gratuidade de justiça: critério objetivo de renda e valor da autodeclaração de hipossuficiência",
+      "resumo_oficial": "Em 03/09/2026 o Plenário fixou critérios para a gratuidade de justiça em todo o Judiciário: quem tem renda mensal de até R$ 5 mil tem direito sem comprovar insuficiência; acima disso, é preciso demonstrar insuficiência de recursos. Cabe a quem pede comprovar renda e insuficiência; o juiz pode exigir documentos e negar o benefício diante de patrimônio ou renda familiar incompatíveis (proposta do Min. Zanin). Critérios valem até nova regulamentação pelo Legislativo. Vencidos os Mins. Edson Fachin e Cármen Lúcia.",
+      "modulacao": "Efeitos apenas sobre processos ajuizados a partir da publicação da ata do julgamento (conforme notícia oficial do STF).",
+      "status": "julgado_acordao_pendente",
+      "status_detalhe": "Julgamento de mérito concluído em 03/09/2026. Acórdão, tese literal e eventuais embargos de declaração NÃO localizados na fonte oficial até 10/11/2026.",
+      "fonte_url": "https://noticias.stf.jus.br/postsnoticias/stf-define-criterios-para-concessao-da-justica-gratuita-em-todo-o-judiciario/",
+      "fonte_processo_url": "https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356",
+      "verificado_em": "2026-11-10",
+      "impacto": [
+        "tst-463",
+        "irr-21"
+      ],
+      "pendencias": [
+        "Tese literal e data de publicação do acórdão (DJe).",
+        "Efeito sobre a Súmula 463, I, do TST e o IRR 21 (Tema 21): a notícia oficial do STF não menciona a súmula; leia o acórdão para saber se houve declaração de inconstitucionalidade ou revisão.",
+        "Alcance do valor: a notícia oficial fala em renda de até R$ 5 mil; confirme no acórdão se funciona como teto ou como parâmetro de presunção.",
+        "Aplicação aos Juizados Especiais: não consta na notícia oficial."
+      ]
+    },
+    {
+      "id": "stf-rg-1389",
+      "tribunal": "STF",
+      "tipo": "tema_rg",
+      "classe": "ARE",
+      "numero": 1389,
+      "processo_paradigma": "ARE 1532603",
+      "relator": "Min. Gilmar Mendes",
+      "tema": "Licitude da contratação de trabalhador autônomo ou pessoa jurídica (\"pejotização\"); competência da Justiça do Trabalho; ônus da prova",
+      "data_julgamento": null,
+      "status": "rg_reconhecida_merito_pendente",
+      "status_detalhe": "Repercussão geral reconhecida; mérito NÃO julgado; sem tese fixada. Em 18/06/2026 o relator retirou a suspensão nacional (vigente desde abril/2025) para a 1ª instância e os TRTs; a suspensão volta após o julgamento pelos TRTs, até o STF fixar a tese. Relações intermediadas por aplicativos ficam fora (Tema 1.291).",
+      "fonte_url": "https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/",
+      "fonte_processo_url": "https://portal.stf.jus.br/processos/detalhe.asp?incidente=7138684",
+      "verificado_em": "2026-11-10",
+      "impacto": [
+        "irr-30"
+      ],
+      "pendencias": [
+        "Andamentos de 2026 e data de pauta: não localizados na página oficial do processo.",
+        "A data de 18/06/2026 é a da publicação da notícia oficial; confira a data da decisão no texto integral.",
+        "Decisões em reclamações constitucionais sobre o alcance da suspensão não foram incluídas por não terem sido verificadas na fonte oficial."
+      ]
+    }
+  ]
+}

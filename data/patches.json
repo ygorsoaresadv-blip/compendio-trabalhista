@@ -1,0 +1,17 @@
+{
+  "_nota": "Avisos editoriais sobre verbetes existentes. Não alteram texto oficial nem status; cada um aponta a fonte oficial.",
+  "alertas": {
+    "tst-463": {
+      "texto": "Em tensão com a ADC 80 (STF, julgada em 03/09/2026), que fixou critério de renda de até R$ 5 mil para a gratuidade de justiça em todo o Judiciário. O acórdão ainda não foi localizado na fonte oficial: confira-o antes de citar este verbete.",
+      "fonte_url": "https://noticias.stf.jus.br/postsnoticias/stf-define-criterios-para-concessao-da-justica-gratuita-em-todo-o-judiciario/"
+    },
+    "irr-21": {
+      "texto": "Em tensão com a ADC 80 (STF, julgada em 03/09/2026), que fixou critério de renda de até R$ 5 mil para a gratuidade de justiça. O acórdão ainda não foi localizado na fonte oficial: confira-o antes de citar este tema.",
+      "fonte_url": "https://noticias.stf.jus.br/postsnoticias/stf-define-criterios-para-concessao-da-justica-gratuita-em-todo-o-judiciario/"
+    },
+    "irr-30": {
+      "texto": "Tema correlato no STF: Tema 1389 da repercussão geral (pejotização), com mérito ainda não julgado.",
+      "fonte_url": "https://noticias.stf.jus.br/postsnoticias/stf-retira-suspensao-de-processos-sobre-pejotizacao-na-primeira-instancia-e-nos-trts/"
+    }
+  }
+}
