@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case: Compêndio trabalhista</title>
+<meta name="description" content="Como transformei uma ferramenta da minha rotina de advogado trabalhista em um site público e gratuito de consulta à jurisprudência.">
+<meta name="theme-color" content="#0f3527">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<meta property="og:title" content="Case: Compêndio trabalhista">
+<meta property="og:description" content="De ferramenta de rotina a site público: problema, solução, decisões de design e stack.">
+<meta property="og:image" content="https://ygorsoaresadv-blip.github.io/compendio-trabalhista/og.png">
+<meta property="og:type" content="article">
+<style>
+@font-face{font-family:Geist;font-weight:100 900;font-display:swap;src:url(fonts/geist-latin.woff2) format("woff2")}
+@font-face{font-family:Fraunces;font-style:italic;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-italic-latin.woff2) format("woff2")}
+:root{--bg:#fbfaf7;--fg:#1d1f1e;--muted:#5f6661;--line:#dcdbd4;--verde:#0f3527;--link:#1c5a41;--ouro:#a9852f;--card:#fff;--tile:#f2f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#0a2118;--fg:#eef3ef;--muted:#aebdb4;--line:#25483a;--verde:#eef3ef;--link:#d4b566;--ouro:#d4b566;--card:#0f2d22;--tile:#11332a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:6px}
+.w{max-width:760px;margin:0 auto;padding:0 20px}
+header{padding:20px 0;border-bottom:1px solid var(--line)}
+.logo{font-weight:600;color:var(--verde);text-decoration:none;display:inline-flex;gap:8px;align-items:baseline}
+.logo i{font:italic 400 24px Fraunces,Georgia,serif;color:var(--ouro)}
+h1{font-size:clamp(36px,6vw,58px);line-height:1.05;letter-spacing:-.035em;color:var(--verde);margin:48px 0 14px;font-weight:600;text-wrap:balance}
+h1 em{font:italic 400 1em Fraunces,Georgia,serif;color:var(--link);letter-spacing:-.02em}
+h2{font-size:28px;letter-spacing:-.02em;color:var(--verde);margin:52px 0 10px;font-weight:600}
+p{margin:0 0 16px;text-wrap:pretty}.lead{font-size:20px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:14.5px;background:var(--card)}
+.num{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:28px 0}
+.num div{background:var(--tile);border-radius:18px;padding:16px 18px}
+.num b{display:block;font-size:30px;letter-spacing:-.03em;color:var(--verde)}.num span{font-size:14px;color:var(--muted)}
+figure{margin:28px 0}figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:18px;display:block}
+figcaption{font-size:14.5px;color:var(--muted);margin-top:8px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:640px){.duo{grid-template-columns:1fr}}
+ul.l{padding-left:20px}ul.l li{margin:6px 0}
+.aviso{background:var(--tile);border-radius:18px;padding:16px 20px;font-size:15px;color:var(--muted);margin-top:44px}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:26px 0 56px;font-size:14.5px;color:var(--muted)}
+.cta{display:inline-block;margin-top:8px;background:var(--link);color:var(--bg);padding:11px 22px;border-radius:999px;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="logo" href="./"><i>§</i>Compêndio trabalhista</a></div></header>
+<main class="w">
+<p style="margin-top:44px;font-weight:600;color:var(--ouro)">Case de portfólio</p>
+<h1>Uma ferramenta da minha rotina, <em>aberta para todo mundo.</em></h1>
+<p class="lead">Eu consultava súmulas e orientações do TST dezenas de vezes por semana, em abas diferentes. Juntei tudo em uma ferramenta de busca e, agora, ela é pública e gratuita.</p>
+<ul class="chips" aria-label="Resumo"><li>Direito do Trabalho</li><li>Design e desenvolvimento</li><li>Site estático, sem coleta de dados</li></ul>
+<p style="margin-top:20px"><a class="cta" href="./">Abrir o compêndio</a></p>
+
+<h2>O problema</h2>
+<p>Quem trabalha com Direito do Trabalho vive de consultar entendimentos do TST e do STF. Os sites oficiais são completos, mas lentos para o dia a dia: cada tipo de verbete mora em um lugar, o status (em vigor, cancelada, convertida) pede atenção extra e montar uma citação certa toma tempo.</p>
+<p>Pior: é fácil citar algo que já foi cancelado. Em peça, esse erro custa credibilidade.</p>
+
+<h2>A solução</h2>
+<p>Um site de consulta rápida que reúne <strong>1.692 verbetes</strong> em um só lugar, com busca instantânea e uma regra que me guiou em todas as decisões: <strong>nada aparece sem dizer a situação, a data de verificação e a fonte oficial.</strong></p>
+<figure><img src="case/consulta-desktop.png" alt="Tela inicial do compêndio com a busca por prescrição e os filtros de tribunal, situação, espécie e ano" loading="lazy" width="1280" height="860"><figcaption>Busca em primeiro plano, filtros em chips e tudo compartilhável pelo endereço.</figcaption></figure>
+
+<div class="num" role="list">
+<div role="listitem"><b>1.692</b><span>verbetes do TST e do STF</span></div>
+<div role="listitem"><b>1 clique</b><span>para copiar a citação pronta</span></div>
+<div role="listitem"><b>100</b><span>acessibilidade, boas práticas e SEO no Lighthouse</span></div>
+<div role="listitem"><b>0</b><span>cookies, cadastros ou rastreadores</span></div>
+</div>
+
+<h2>O que ele faz</h2>
+<ul class="l">
+<li><strong>Entende como advogado procura.</strong> Digite <code>331</code>, <code>OJ 191</code>, <code>SDI-1 54</code> ou <code>tema 1389</code> e o número exato vem primeiro; use aspas para frase exata.</li>
+<li><strong>Busca rápida</strong> com <code>Ctrl K</code> / <code>⌘K</code>, de qualquer tela.</li>
+<li><strong>Status que não se confunde:</strong> cada situação tem nome e símbolo, não só cor.</li>
+<li><strong>Citação pronta</strong> em formato forense ou ABNT, com o link da fonte oficial.</li>
+<li><strong>Linha do tempo</strong> de cada verbete, favoritos e fluxogramas de navegação.</li>
+<li><strong>Tudo na URL:</strong> mando o link e a pessoa abre a mesma busca, com os mesmos filtros.</li>
+</ul>
+<div class="duo">
+<figure><img src="case/cartao-aberto.png" alt="Cartão aberto da ADC 80 do STF, com resumo da notícia oficial, pendências de verificação, linha do tempo e botões de citação" loading="lazy" width="1280" height="2000" style="object-fit:cover;object-position:top;max-height:520px"><figcaption>Cartão aberto: o que se sabe, o que ainda falta confirmar e de onde veio.</figcaption></figure>
+<figure><img src="case/mobile-escuro.png" alt="Versão para celular em modo escuro, com a busca e os primeiros resultados" loading="lazy" width="500" height="980" style="object-fit:cover;object-position:top;max-height:520px"><figcaption>Pensado primeiro para o celular, com modo escuro.</figcaption></figure>
+</div>
+
+<h2>Decisões de design</h2>
+<ul class="l">
+<li><strong>Honestidade antes de tudo.</strong> Onde a tese ainda não saiu (como na ADC 80), o site mostra um resumo da notícia oficial, diz que a tese literal não foi localizada e lista as pendências. Prefiro um aviso a uma certeza inventada.</li>
+<li><strong>Identidade do meu site.</strong> Verde-noite, dourado como detalhe, Geist nos textos e Fraunces itálico na assinatura, com o § como marca.</li>
+<li><strong>Jurídico, mas leve.</strong> Leitura confortável, alvos de toque generosos, contraste conferido e navegação inteira pelo teclado.</li>
+<li><strong>Sem coleta de dados.</strong> Favoritos e tema ficam só no navegador de quem usa. Não há servidor nem análise de uso.</li>
+<li><strong>Aviso sempre visível:</strong> conteúdo informativo, sem caráter de consultoria; confira na fonte oficial.</li>
+</ul>
+
+<h2>Como foi feito</h2>
+<p>Site estático (Vite, React, TypeScript e Tailwind), com busca no próprio navegador (MiniSearch) e busca rápida adaptada de um componente do 21st.dev. Os dados são arquivos JSON versionados; a publicação é automática pelo GitHub Pages. O JavaScript inicial tem cerca de 67&nbsp;KB comprimido, e os verbetes carregam em paralelo.</p>
+
+<h2>Processo e limites</h2>
+<p>O ponto de partida foi um compêndio interno do escritório. Para a versão pública, <strong>criei um repositório novo, sem histórico</strong>, e levei só jurisprudência oficial: nada de casos, clientes, regras ou fluxos internos. Antes de publicar, rodei uma varredura de padrões sensíveis e conferi o histórico do git.</p>
+<p>A base geral foi verificada em 22/09/2026 e os itens novos (ADC 80 e Tema 1389) em 10/11/2026. O que ainda falta levantar está descrito de forma aberta no <a href="https://github.com/ygorsoaresadv-blip/compendio-trabalhista/blob/main/docs/ATUALIZACAO-2026-11.md">changelog</a>.</p>
+
+<div class="aviso" role="note">Conteúdo informativo, sem caráter de consultoria ou aconselhamento jurídico. A jurisprudência deve ser conferida na fonte oficial. Esta página apresenta uma ferramenta, não oferece serviços advocatícios nem promete resultado.</div>
+</main>
+<footer><div class="w">Criado por <a href="https://ygor.blog">Ygor Soares</a> · <a href="https://github.com/ygorsoaresadv-blip/compendio-trabalhista">Código no GitHub</a> (MIT) · conteúdo em CC0</div></footer>
+</body>
+</html>
