@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Compêndio trabalhista: busca de súmulas, OJs e precedentes do TST e do STF</title>
     <meta name="description" content="Consulta gratuita e rápida à jurisprudência trabalhista: súmulas, OJs, precedentes normativos, IRRs e temas do STF, com situação, data de verificação e link para a fonte oficial." />
-    <meta name="theme-color" content="#0f3527" />
+    <meta name="theme-color" content="#F6F2EA" />
     <link rel="canonical" href="https://ygorsoaresadv-blip.github.io/compendio-trabalhista/" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="preload" href="./fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -26,13 +26,12 @@
       {"@context":"https://schema.org","@type":"WebApplication","name":"Compêndio trabalhista","applicationCategory":"ReferenceApplication","inLanguage":"pt-BR","isAccessibleForFree":true,"author":{"@type":"Person","name":"Ygor Soares"}}
     </script>
     <script>
-      // aplica o tema antes da primeira pintura, para não piscar
+      // aplica o modo antes da primeira pintura, para não piscar (padrão: claro, como o fluxograma)
       try {
         var p = new URLSearchParams(location.search).get("modo");
-        var t = p === "claro" ? "light" : p === "escuro" ? "dark" : localStorage.getItem("compendio:tema");
-        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        document.documentElement.dataset.theme = t;
-      } catch (e) {}
+        var t = p === "claro" || p === "escuro" ? p : localStorage.getItem("compendio:modo");
+        document.documentElement.dataset.modo = t === "escuro" ? "escuro" : "claro";
+      } catch (e) { document.documentElement.dataset.modo = "claro"; }
     </script>
   </head>
   <body>

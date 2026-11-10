@@ -1,6 +1,5 @@
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath } from "node:url";
 
 // Coloca o CSS dentro do HTML: tira uma requisição que bloqueia a primeira pintura.
@@ -26,7 +25,7 @@ function cssInline(): Plugin {
 // base relativa: funciona em qualquer subcaminho do GitHub Pages
 export default defineConfig({
   base: "./",
-  plugins: [react(), tailwindcss(), cssInline()],
+  plugins: [react(), cssInline()],
   resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } },
   build: { sourcemap: false, target: "es2020", cssCodeSplit: false },
 });
