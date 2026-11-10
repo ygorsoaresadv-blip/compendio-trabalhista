@@ -10,5 +10,5 @@ Você pode copiar, modificar, redistribuir e usar, inclusive comercialmente, sem
 - Os **textos oficiais** (súmulas, OJs, precedentes, teses, ementas) são atos e decisões de órgãos públicos e continuam
   sendo públicos; a fonte é sempre o tribunal. Cada verbete traz o link para a fonte oficial.
 - O **código** do site segue a licença MIT (arquivo `LICENSE`).
-- A fonte **Geist** e a fonte **Fraunces** (pasta `public/fonts`) têm licença própria (SIL Open Font License 1.1).
+- A fonte **Inter** (pasta `public/fonts`) tem licença própria (SIL Open Font License 1.1).
 - Sem garantia: o conteúdo é informativo, sem caráter de consultoria ou aconselhamento jurídico.

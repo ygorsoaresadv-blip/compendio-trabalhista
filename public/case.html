@@ -12,44 +12,44 @@
 <meta property="og:image" content="https://ygorsoaresadv-blip.github.io/compendio-trabalhista/og.png">
 <meta property="og:type" content="article">
 <style>
-@font-face{font-family:Geist;font-weight:100 900;font-display:swap;src:url(fonts/geist-latin.woff2) format("woff2")}
-@font-face{font-family:Fraunces;font-style:italic;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-italic-latin.woff2) format("woff2")}
-:root{--bg:#fbfaf7;--fg:#1d1f1e;--muted:#5f6661;--line:#dcdbd4;--verde:#0f3527;--link:#1c5a41;--ouro:#a9852f;--card:#fff;--tile:#f2f1ec}
-@media (prefers-color-scheme:dark){:root{--bg:#0a2118;--fg:#eef3ef;--muted:#aebdb4;--line:#25483a;--verde:#eef3ef;--link:#d4b566;--ouro:#d4b566;--card:#0f2d22;--tile:#11332a}}
+@font-face{font-family:"Inter Variable";font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-wght-normal.woff2) format("woff2")}
+:root{--bg:#F6F2EA;--elev:#fff;--fg:#2C2C2A;--muted:#62625B;--faint:#8A877D;--line:rgba(12,59,46,.11);--tinta:#0C3B2E;--link:#1B6B4C;--ouro:#8F6F2E;--fill:rgba(12,59,46,.075);--fill2:rgba(12,59,46,.04);--sombra:0 1px 2px rgba(12,59,46,.05),0 4px 14px rgba(12,59,46,.06)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter Variable",Inter,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:-.011em;-webkit-font-smoothing:antialiased}
 a{color:var(--link);text-underline-offset:3px}
-:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:3px solid rgba(198,163,92,.7);outline-offset:2px;border-radius:8px}
 .w{max-width:760px;margin:0 auto;padding:0 20px}
-header{padding:20px 0;border-bottom:1px solid var(--line)}
-.logo{font-weight:600;color:var(--verde);text-decoration:none;display:inline-flex;gap:8px;align-items:baseline}
-.logo i{font:italic 400 24px Fraunces,Georgia,serif;color:var(--ouro)}
-h1{font-size:clamp(36px,6vw,58px);line-height:1.05;letter-spacing:-.035em;color:var(--verde);margin:48px 0 14px;font-weight:600;text-wrap:balance}
-h1 em{font:italic 400 1em Fraunces,Georgia,serif;color:var(--link);letter-spacing:-.02em}
-h2{font-size:28px;letter-spacing:-.02em;color:var(--verde);margin:52px 0 10px;font-weight:600}
-p{margin:0 0 16px;text-wrap:pretty}.lead{font-size:20px;color:var(--muted)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
-.chips li{border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:14.5px;background:var(--card)}
-.num{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:28px 0}
-.num div{background:var(--tile);border-radius:18px;padding:16px 18px}
-.num b{display:block;font-size:30px;letter-spacing:-.03em;color:var(--verde)}.num span{font-size:14px;color:var(--muted)}
-figure{margin:28px 0}figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:18px;display:block}
-figcaption{font-size:14.5px;color:var(--muted);margin-top:8px}
+header{position:sticky;top:0;background:rgba(246,242,234,.8);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line);padding:12px 0;z-index:5}
+.logo{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;letter-spacing:-.02em;color:var(--tinta);text-decoration:none}
+.logo b{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#0C3B2E,#1B6B4C);color:#C6A35C;display:inline-flex;align-items:center;justify-content:center;font-size:16px}
+h1{font-size:clamp(34px,5.6vw,52px);line-height:1.08;letter-spacing:-.032em;color:var(--tinta);margin:44px 0 12px;font-weight:700;text-wrap:balance}
+h2{font-size:26px;letter-spacing:-.025em;color:var(--tinta);margin:48px 0 10px;font-weight:700}
+p{margin:0 0 16px;text-wrap:pretty}.lead{font-size:19px;color:var(--muted);letter-spacing:-.017em}
+.eyebrow{font-weight:600;color:var(--ouro);margin:44px 0 0;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{border-radius:99px;padding:4px 14px;font-size:13.5px;font-weight:500;background:var(--fill);color:var(--muted)}
+.num{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:26px 0;padding:0;list-style:none}
+.num li{background:var(--elev);border-radius:20px;padding:16px 18px;box-shadow:var(--sombra)}
+.num b{display:block;font-size:28px;letter-spacing:-.03em;color:var(--tinta)}.num span{font-size:13.5px;color:var(--muted)}
+figure{margin:26px 0}figure img{width:100%;height:auto;border-radius:20px;display:block;box-shadow:var(--sombra)}
+figcaption{font-size:13.5px;color:var(--faint);margin-top:8px}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:640px){.duo{grid-template-columns:1fr}}
-ul.l{padding-left:20px}ul.l li{margin:6px 0}
-.aviso{background:var(--tile);border-radius:18px;padding:16px 20px;font-size:15px;color:var(--muted);margin-top:44px}
-footer{border-top:1px solid var(--line);margin-top:56px;padding:26px 0 56px;font-size:14.5px;color:var(--muted)}
-.cta{display:inline-block;margin-top:8px;background:var(--link);color:var(--bg);padding:11px 22px;border-radius:999px;text-decoration:none;font-weight:600}
+ul.l{padding-left:20px}ul.l li{margin:7px 0}
+code{font:12.5px ui-monospace,Menlo,Consolas,monospace;background:var(--fill2);padding:1px 6px;border-radius:5px}
+.aviso{background:var(--fill2);border-radius:14px;padding:14px 18px;font-size:14px;color:var(--muted);margin-top:44px}
+footer{margin-top:52px;padding:24px 0 56px;font-size:13px;color:var(--faint);border-top:1px solid var(--line)}
+.btn{display:inline-block;margin-top:6px;background:var(--tinta);color:#fff;padding:9px 18px;border-radius:99px;text-decoration:none;font-weight:500;font-size:14px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-<header><div class="w"><a class="logo" href="./"><i>§</i>Compêndio trabalhista</a></div></header>
+<header><div class="w"><a class="logo" href="./"><b aria-hidden="true">§</b>Compêndio trabalhista</a></div></header>
 <main class="w">
-<p style="margin-top:44px;font-weight:600;color:var(--ouro)">Case de portfólio</p>
-<h1>Uma ferramenta da minha rotina, <em>aberta para todo mundo.</em></h1>
+<p class="eyebrow">Case de portfólio</p>
+<h1>Uma ferramenta da minha rotina, aberta para todo mundo.</h1>
 <p class="lead">Eu consultava súmulas e orientações do TST dezenas de vezes por semana, em abas diferentes. Juntei tudo em uma ferramenta de busca e, agora, ela é pública e gratuita.</p>
 <ul class="chips" aria-label="Resumo"><li>Direito do Trabalho</li><li>Design e desenvolvimento</li><li>Site estático, sem coleta de dados</li></ul>
-<p style="margin-top:20px"><a class="cta" href="./">Abrir o compêndio</a></p>
+<p style="margin-top:20px"><a class="btn" href="./">Abrir o compêndio</a></p>
 
 <h2>O problema</h2>
 <p>Quem trabalha com Direito do Trabalho vive de consultar entendimentos do TST e do STF. Os sites oficiais são completos, mas lentos para o dia a dia: cada tipo de verbete mora em um lugar, o status (em vigor, cancelada, convertida) pede atenção extra e montar uma citação certa toma tempo.</p>
@@ -59,12 +59,12 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:26px 0 56px;font
 <p>Um site de consulta rápida que reúne <strong>1.692 verbetes</strong> em um só lugar, com busca instantânea e uma regra que me guiou em todas as decisões: <strong>nada aparece sem dizer a situação, a data de verificação e a fonte oficial.</strong></p>
 <figure><img src="case/consulta-desktop.png" alt="Tela inicial do compêndio com a busca por prescrição e os filtros de tribunal, situação, espécie e ano" loading="lazy" width="1280" height="860"><figcaption>Busca em primeiro plano, filtros em chips e tudo compartilhável pelo endereço.</figcaption></figure>
 
-<div class="num" role="list">
-<div role="listitem"><b>1.692</b><span>verbetes do TST e do STF</span></div>
-<div role="listitem"><b>1 clique</b><span>para copiar a citação pronta</span></div>
-<div role="listitem"><b>100</b><span>acessibilidade, boas práticas e SEO no Lighthouse</span></div>
-<div role="listitem"><b>0</b><span>cookies, cadastros ou rastreadores</span></div>
-</div>
+<ul class="num">
+<li><b>1.692</b><span>verbetes do TST e do STF</span></li>
+<li><b>1 clique</b><span>para copiar a citação pronta</span></li>
+<li><b>100</b><span>acessibilidade, boas práticas e SEO no Lighthouse</span></li>
+<li><b>0</b><span>cookies, cadastros ou rastreadores</span></li>
+</ul>
 
 <h2>O que ele faz</h2>
 <ul class="l">
@@ -77,20 +77,21 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:26px 0 56px;font
 </ul>
 <div class="duo">
 <figure><img src="case/cartao-aberto.png" alt="Cartão aberto da ADC 80 do STF, com resumo da notícia oficial, pendências de verificação, linha do tempo e botões de citação" loading="lazy" width="1280" height="2000" style="object-fit:cover;object-position:top;max-height:520px"><figcaption>Cartão aberto: o que se sabe, o que ainda falta confirmar e de onde veio.</figcaption></figure>
-<figure><img src="case/mobile-escuro.png" alt="Versão para celular em modo escuro, com a busca e os primeiros resultados" loading="lazy" width="500" height="980" style="object-fit:cover;object-position:top;max-height:520px"><figcaption>Pensado primeiro para o celular, com modo escuro.</figcaption></figure>
+<figure><img src="case/mobile-escuro.png" alt="Versão para celular em modo escuro, com a busca e os primeiros resultados" loading="lazy" width="500" height="980" style="object-fit:cover;object-position:top;max-height:520px"><figcaption>A mesma tela no celular, em modo escuro.</figcaption></figure>
 </div>
 
 <h2>Decisões de design</h2>
 <ul class="l">
 <li><strong>Honestidade antes de tudo.</strong> Onde a tese ainda não saiu (como na ADC 80), o site mostra um resumo da notícia oficial, diz que a tese literal não foi localizada e lista as pendências. Prefiro um aviso a uma certeza inventada.</li>
-<li><strong>Identidade do meu site.</strong> Verde-noite, dourado como detalhe, Geist nos textos e Fraunces itálico na assinatura, com o § como marca.</li>
+<li><strong>Visual limpo, no estilo dos apps do dia a dia.</strong> Fundo creme, verde-escuro nos títulos, dourado só como detalhe, cantos suaves, barras de vidro fosco e o § como marca. É a mesma linguagem do compêndio que uso no escritório.</li>
+<li><strong>Busca como o Spotlight do Mac.</strong> Um campo grande, atalhos de espécie logo abaixo e resultados que se abrem no próprio lugar, com o termo buscado marcado em amarelo.</li>
 <li><strong>Jurídico, mas leve.</strong> Leitura confortável, alvos de toque generosos, contraste conferido e navegação inteira pelo teclado.</li>
 <li><strong>Sem coleta de dados.</strong> Favoritos e tema ficam só no navegador de quem usa. Não há servidor nem análise de uso.</li>
 <li><strong>Aviso sempre visível:</strong> conteúdo informativo, sem caráter de consultoria; confira na fonte oficial.</li>
 </ul>
 
 <h2>Como foi feito</h2>
-<p>Site estático (Vite, React, TypeScript e Tailwind), com busca no próprio navegador (MiniSearch) e busca rápida adaptada de um componente do 21st.dev. Os dados são arquivos JSON versionados; a publicação é automática pelo GitHub Pages. O JavaScript inicial tem cerca de 67&nbsp;KB comprimido, e os verbetes carregam em paralelo.</p>
+<p>Site estático (Vite, React e TypeScript), com busca no próprio navegador e um campo de busca em estilo Spotlight, adaptado de um componente do 21st.dev. Fonte Inter. Os dados são arquivos JSON versionados; a publicação é automática pelo GitHub Pages. O JavaScript inicial tem cerca de 58&nbsp;KB comprimido, e os verbetes carregam em paralelo.</p>
 
 <h2>Processo e limites</h2>
 <p>O ponto de partida foi um compêndio interno do escritório. Para a versão pública, <strong>criei um repositório novo, sem histórico</strong>, e levei só jurisprudência oficial: nada de casos, clientes, regras ou fluxos internos. Antes de publicar, rodei uma varredura de padrões sensíveis e conferi o histórico do git.</p>

@@ -13,11 +13,11 @@ recursos repetitivos e alguns temas do STF com impacto direto na matéria. Cada 
 
 - **1.692 verbetes** (TST 1.609 e STF 83): súmulas, súmulas vinculantes, OJs, OJs transitórias, PNs, IRRs, IACs, IRDRs, ADC 80 e Tema 1389.
 - **Busca instantânea** no navegador. Entende número e espécie (`331`, `OJ 191`, `SDI-1 54`, `SV 22`, `tema 1389`) e frase exata entre aspas.
-- **Busca rápida** com `Ctrl K` / `⌘K`.
-- **Filtros** por tribunal, espécie, situação, tema e ano, e atalho "só em vigor".
-- **Cartões expansíveis** com tese, questão jurídica, referências, observação oficial e **linha do tempo**.
+- **Campo de busca em estilo Spotlight**, com os atalhos `/` e `Ctrl K` / `⌘K`, setas para percorrer os resultados e o termo marcado no texto.
+- **Filtros:** atalhos de espécie, chave "só o que está em vigor" e "Mais filtros" (tribunal, órgão, tema, status, espécie exata, ordem e favoritos).
+- **Linhas que se abrem no lugar**, com tese, questão jurídica, referências, observação oficial e **linha do tempo** das redações.
 - **Copiar citação** em formato forense ou ABNT, com link oficial. **Copiar link** do verbete.
-- **Favoritos** (ficam só no seu navegador) e **modo claro/escuro**.
+- **Favoritos** (ficam só no seu navegador) e **modo claro/escuro** (abre sempre no claro).
 - **Compartilhamento por URL**: busca, filtros e o verbete aberto vão no endereço.
 - **Fluxogramas** de navegação para achar o verbete certo.
 - Sem cadastro, sem cookies, sem rastreamento, sem servidor.
@@ -25,7 +25,7 @@ recursos repetitivos e alguns temas do STF com impacto direto na matéria. Cada 
 ## Situação dos verbetes
 
 `Em vigor`, `Cancelada`, `Convertida`, `Superada`, `Afetado` (IRR em andamento), `Julgado, acórdão pendente`,
-`RG reconhecida, mérito pendente`. Cada status tem texto e símbolo próprios; a cor nunca é o único sinal.
+`RG reconhecida, mérito pendente`. Cada status tem texto próprio; a cor nunca é o único sinal.
 
 ## Sobre os dados e a atualização
 
@@ -51,14 +51,14 @@ status e **link oficial**; o que não puder ser verificado na fonte não deve en
 
 ## Stack
 
-Vite, React, TypeScript, Tailwind CSS v4, MiniSearch (busca no cliente), cmdk e Radix Dialog (busca rápida,
-adaptada de um componente do [21st.dev](https://21st.dev)). Fontes Geist e Fraunces, servidas localmente.
+Vite, React e TypeScript. A busca roda no navegador, sem dependências, e o campo de busca em estilo Spotlight é
+adaptado de um componente do [21st.dev](https://21st.dev). Fonte Inter, servida localmente. Sem Tailwind e sem biblioteca de componentes.
 Publicado no GitHub Pages por GitHub Actions.
 
 ## Licenças
 
 - **Código:** [MIT](LICENSE).
 - **Conteúdo organizado e notas editoriais:** [CC0 1.0](LICENSE-CONTEUDO.md), uso irrestrito. Os textos oficiais são públicos.
-- **Fontes:** Geist e Fraunces, SIL Open Font License 1.1.
+- **Fonte:** Inter, SIL Open Font License 1.1 (`public/fonts/LICENSE-Inter.txt`).
 
 Criado por [Ygor Soares](https://ygor.blog).
