@@ -60,14 +60,14 @@ export const TIPOS: Record<string, { curto: string; longo: string }> = {
 };
 
 // Cada status tem texto e símbolo próprios: a cor nunca é o único sinal.
-export const STATUS: Record<string, { rotulo: string; simbolo: string; dica: string }> = {
-  em_vigor: { rotulo: "Em vigor", simbolo: "●", dica: "Entendimento vigente na data da verificação." },
-  cancelada: { rotulo: "Cancelada", simbolo: "✕", dica: "Cancelada ou revogada pelo tribunal. Não use como fundamento atual." },
-  convertida: { rotulo: "Convertida", simbolo: "⇄", dica: "Convertida em outro verbete; veja a observação para o verbete que a substituiu." },
-  superada: { rotulo: "Superada", simbolo: "↷", dica: "Superada por decisão posterior." },
-  afetado: { rotulo: "Afetado", simbolo: "◐", dica: "Tema afetado a julgamento em recurso repetitivo; ainda sem tese firmada." },
-  julgado_acordao_pendente: { rotulo: "Julgado, acórdão pendente", simbolo: "◑", dica: "Julgamento de mérito concluído; acórdão e tese literal ainda não localizados na fonte oficial." },
-  rg_reconhecida_merito_pendente: { rotulo: "RG reconhecida, mérito pendente", simbolo: "◐", dica: "Repercussão geral reconhecida; mérito ainda não julgado." },
+export const STATUS: Record<string, { rotulo: string; dica: string }> = {
+  em_vigor: { rotulo: "Em vigor", dica: "Entendimento vigente na data da verificação." },
+  cancelada: { rotulo: "Cancelada", dica: "Cancelada ou revogada pelo tribunal. Não use como fundamento atual." },
+  convertida: { rotulo: "Convertida", dica: "Convertida em outro verbete; veja a observação para o verbete que a substituiu." },
+  superada: { rotulo: "Superada", dica: "Superada por decisão posterior." },
+  afetado: { rotulo: "Afetado", dica: "Tema afetado a julgamento em recurso repetitivo; ainda sem tese firmada." },
+  julgado_acordao_pendente: { rotulo: "Julgado, acórdão pendente", dica: "Julgamento de mérito concluído; acórdão e tese literal ainda não localizados na fonte oficial." },
+  rg_reconhecida_merito_pendente: { rotulo: "RG reconhecida, mérito pendente", dica: "Repercussão geral reconhecida; mérito ainda não julgado." },
 };
 
 export const nomeTribunal = (t: string) => (t === "STF" ? "Supremo Tribunal Federal" : "Tribunal Superior do Trabalho");
@@ -134,4 +134,42 @@ export function citacaoABNT(r: Item): string {
   const extra = [r.relator ? `Relator: ${r.relator.replace(/ \(.*\)/, "")}.` : "", r.dataJulgamento ? `Julgado em ${dataBR(r.dataJulgamento)}.` : ""].filter(Boolean).join(" ");
   const link = r.url ? ` Disponível em: ${r.url}. Acesso em: ${hoje()}.` : "";
   return `${orgaoAutor} ${titulo}. ${ementa}. ${extra}${link}`.replace(/\s+/g, " ").replace(/\.\./g, ".").trim();
+}
+
+// ---------- nomes e ícones, como no compêndio do fluxograma ----------
+const TEMA_TIPOS = ["irr", "iac", "irdr", "tema_rg"];
+export const ehTema = (r: { tipo: string }) => TEMA_TIPOS.includes(r.tipo);
+
+export function nome(r: Item): string {
+  switch (r.tipo) {
+    case "sumula": return `Súmula nº ${r.numero}`;
+    case "sumula_vinculante": return `Súmula Vinculante nº ${r.numero}`;
+    case "oj": return `OJ nº ${r.numero}${r.orgao ? " da " + r.orgao : ""}`;
+    case "oj_transitoria": return `OJ Transitória nº ${r.numero}${r.orgao ? " da " + r.orgao : ""}`;
+    case "pn": return `Precedente Normativo nº ${r.numero}`;
+    case "adc": return `ADC nº ${r.numero}`;
+    case "tema_rg": return `Tema ${r.numero} · RG`;
+    default: return `Tema ${r.numero} · ${r.tipo.toUpperCase()}`;
+  }
+}
+
+export function ico(r: Item): [string, string] {
+  if (r.tipo === "sumula") return ["sumula", "S"];
+  if (r.tipo === "sumula_vinculante") return ["sv", "SV"];
+  if (r.tipo === "oj" || r.tipo === "oj_transitoria") return ["oj", "OJ"];
+  if (r.tipo === "pn") return ["pn", "PN"];
+  if (r.tipo === "adc") return ["stf", "ADC"];
+  if (r.tipo === "tema_rg") return ["stf", "RG"];
+  return ["tema", r.tipo.toUpperCase()];
+}
+
+export function especieNome(r: Item): string {
+  const e: Record<string, string> = {
+    sumula: "SÚMULA", sumula_vinculante: "SÚMULA VINCULANTE", oj: "ORIENTAÇÃO JURISPRUDENCIAL",
+    oj_transitoria: "ORIENTAÇÃO JURISPRUDENCIAL TRANSITÓRIA", pn: "PRECEDENTE NORMATIVO",
+    irr: "TEMA DE RECURSO REPETITIVO · IRR", iac: "INCIDENTE DE ASSUNÇÃO DE COMPETÊNCIA · IAC",
+    irdr: "INCIDENTE DE RESOLUÇÃO DE DEMANDAS REPETITIVAS · IRDR", adc: "AÇÃO DECLARATÓRIA DE CONSTITUCIONALIDADE",
+    tema_rg: "TEMA DE REPERCUSSÃO GERAL",
+  };
+  return [r.tribunal, e[r.tipo] ?? r.tipo.toUpperCase(), r.orgao?.toUpperCase()].filter(Boolean).join(" · ");
 }
